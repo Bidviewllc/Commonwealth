@@ -633,7 +633,8 @@ function stars(rating: string | undefined) {
 		});
 
 		function getServicesVisibleCount() {
-			if (window.matchMedia("(max-width: 1024px)").matches) return 1;
+			if (window.matchMedia("(max-width: 640px)").matches) return 1;
+			if (window.matchMedia("(max-width: 1024px)").matches) return 2;
 			return 4;
 		}
 
@@ -3616,6 +3617,12 @@ details[open] .accordion-icon { transform: rotate(90deg); }
 
 @media (max-width: 1024px) {
 	.services-section .service-card {
+		flex-basis: calc((100% - 1rem) / 2);
+	}
+}
+
+@media (max-width: 640px) {
+	.services-section .service-card {
 		flex-basis: 100%;
 	}
 }
@@ -4498,8 +4505,8 @@ details[open] .accordion-icon { transform: rotate(90deg); }
 	}
 
 	.services-section .service-card {
-		flex: 0 0 100% !important;
-		width: 100% !important;
+		flex: 0 0 calc((100% - 1rem) / 2) !important;
+		width: calc((100% - 1rem) / 2) !important;
 	}
 
 	.services-controls {
@@ -4558,8 +4565,9 @@ details[open] .accordion-icon { transform: rotate(90deg); }
 		height: 300px !important;
 	}
 
-	.services-section .cards-grid {
-		grid-template-columns: 1fr !important;
+	.services-section .service-card {
+		flex: 0 0 100% !important;
+		width: 100% !important;
 	}
 
 	.hearing-aids-section .ha-card {
