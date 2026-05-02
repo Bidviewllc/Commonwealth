@@ -1,0 +1,1 @@
+INSERT OR IGNORE INTO [users] ([id],[email],[name],[avatar_url],[role],[email_verified],[data],[created_at],[updated_at],[disabled]) VALUES ('01KQKQN697CTSD9ZXEY20B5GA1','dinesh@bidviewmarketing.com','Dinesh Kumar',NULL,50,0,NULL,'2026-05-02T06:57:44.743Z','2026-05-02T06:57:44.743Z',0);

@@ -1,0 +1,2 @@
+INSERT OR IGNORE INTO [_emdash_taxonomy_defs] ([id],[name],[label],[label_singular],[hierarchical],[collections],[created_at]) VALUES ('taxdef_category','category','Categories','Category',1,'["posts"]','2026-05-01 14:55:22');
+INSERT OR IGNORE INTO [_emdash_taxonomy_defs] ([id],[name],[label],[label_singular],[hierarchical],[collections],[created_at]) VALUES ('taxdef_tag','tag','Tags','Tag',0,'["posts"]','2026-05-01 14:55:22');

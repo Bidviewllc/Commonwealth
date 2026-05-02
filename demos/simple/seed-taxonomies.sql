@@ -1,0 +1,15 @@
+INSERT OR IGNORE INTO [taxonomies] ([id],[name],[slug],[label],[parent_id],[data]) VALUES ('01KQJ0K266XGJYBPY58SXET69F','category','development','Development',NULL,NULL);
+INSERT OR IGNORE INTO [taxonomies] ([id],[name],[slug],[label],[parent_id],[data]) VALUES ('01KQJ0K2672VT0F9JFVAZB8592','category','design','Design',NULL,NULL);
+INSERT OR IGNORE INTO [taxonomies] ([id],[name],[slug],[label],[parent_id],[data]) VALUES ('01KQJ0K267V0G6GMT44FM9TAGK','category','notes','Notes',NULL,NULL);
+INSERT OR IGNORE INTO [taxonomies] ([id],[name],[slug],[label],[parent_id],[data]) VALUES ('01KQJ0K268YH0BDY3SWVVFM7CK','tag','webdev','Web Development',NULL,NULL);
+INSERT OR IGNORE INTO [taxonomies] ([id],[name],[slug],[label],[parent_id],[data]) VALUES ('01KQJ0K268QYQQ0E18NQFNXZG8','tag','opinion','Opinion',NULL,NULL);
+INSERT OR IGNORE INTO [taxonomies] ([id],[name],[slug],[label],[parent_id],[data]) VALUES ('01KQJ0K269ZFKJ8SHWZ4VJSCRN','tag','tools','Tools',NULL,NULL);
+INSERT OR IGNORE INTO [taxonomies] ([id],[name],[slug],[label],[parent_id],[data]) VALUES ('01KQJ0K269PZ4BXPGNXX66B1ZR','tag','creativity','Creativity',NULL,NULL);
+INSERT OR IGNORE INTO [taxonomies] ([id],[name],[slug],[label],[parent_id],[data]) VALUES ('01KQJ350GA7GZYW713FWYPX26S','category','hearing-health','Hearing Health',NULL,NULL);
+INSERT OR IGNORE INTO [taxonomies] ([id],[name],[slug],[label],[parent_id],[data]) VALUES ('01KQJ350GB06V9DTB0RSQQQ3ZR','category','hearing-aids','Hearing Aids',NULL,NULL);
+INSERT OR IGNORE INTO [taxonomies] ([id],[name],[slug],[label],[parent_id],[data]) VALUES ('01KQJ350GCXTHRT5NGSSDEAGD6','category','audiology','Audiology',NULL,NULL);
+INSERT OR IGNORE INTO [taxonomies] ([id],[name],[slug],[label],[parent_id],[data]) VALUES ('01KQJ350GDMNYPFAVECPM9ZXQC','category','hearing-protection','Hearing Protection',NULL,NULL);
+INSERT OR IGNORE INTO [taxonomies] ([id],[name],[slug],[label],[parent_id],[data]) VALUES ('01KQJ350GDP27FRZ6FB6T5087S','tag','tips','Tips',NULL,NULL);
+INSERT OR IGNORE INTO [taxonomies] ([id],[name],[slug],[label],[parent_id],[data]) VALUES ('01KQJ350GEGV2WWPHQ8E8ZXQ8M','tag','treatment','Treatment',NULL,NULL);
+INSERT OR IGNORE INTO [taxonomies] ([id],[name],[slug],[label],[parent_id],[data]) VALUES ('01KQJ350GE7RPN5P5FEX54C6JR','tag','technology','Technology',NULL,NULL);
+INSERT OR IGNORE INTO [taxonomies] ([id],[name],[slug],[label],[parent_id],[data]) VALUES ('01KQJ350GF2ZGAXRZCDMX2NQ68','tag','tinnitus','Tinnitus',NULL,NULL);

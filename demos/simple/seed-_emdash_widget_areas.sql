@@ -1,0 +1,2 @@
+INSERT OR IGNORE INTO [_emdash_widget_areas] ([id],[name],[label],[description],[created_at]) VALUES ('01KQJ0K2J0WXPD1WZ9BY9V4926','sidebar','Sidebar','Widget area displayed on single post pages','2026-05-01 14:55:23');
+INSERT OR IGNORE INTO [_emdash_widget_areas] ([id],[name],[label],[description],[created_at]) VALUES ('01KQJ0K2J2W8AE3R790X6YZ1SF','footer','Footer','Widget area displayed in the site footer','2026-05-01 14:55:23');
