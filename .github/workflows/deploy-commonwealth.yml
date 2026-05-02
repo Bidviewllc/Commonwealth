@@ -1,0 +1,36 @@
+name: Deploy Commonwealth Audiology
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - "demos/simple/**"
+      - "packages/**"
+      - ".github/workflows/deploy-commonwealth.yml"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    name: Build and Deploy to Cloudflare Workers
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build packages
+        run: pnpm run build
+
+      - name: Build and deploy
+        working-directory: demos/simple
+        run: pnpm run deploy
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}

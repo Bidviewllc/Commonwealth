@@ -1,0 +1,28 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "commonwealth-audiology",
+	"main": "./src/worker.ts",
+	"account_id": "981338e6544cfe45d9819bf0ea6eb83a",
+	"compatibility_date": "2026-02-24",
+	"compatibility_flags": ["nodejs_compat"],
+	"placement": { "mode": "smart" },
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "commonwealth-db",
+			"database_id": "e299bd06-c631-45d9-8d17-86b8d7b09271"
+		}
+	],
+	"r2_buckets": [
+		{
+			"binding": "MEDIA",
+			"bucket_name": "commonwealth-media"
+		}
+	],
+	"kv_namespaces": [
+		{
+			"binding": "SESSION",
+			"id": "b0a88beb034a433788cd9725301d5f5f"
+		}
+	]
+}
