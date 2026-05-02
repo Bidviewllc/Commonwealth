@@ -1,0 +1,2 @@
+[hooks] Plugin "audit-log" declares content:beforeSave hook without content:write capability — skipping
+[hooks] Plugin "audit-log" declares media:afterUpload hook without media:read capability — skipping

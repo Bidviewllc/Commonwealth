@@ -1,0 +1,1032 @@
+---
+import { getMenu, getEmDashCollection, getSiteSettings } from "emdash";
+import {
+	EmDashHead,
+	EmDashBodyStart,
+	EmDashBodyEnd,
+} from "emdash/ui";
+import { createPublicPageContext } from "emdash/page";
+import { Font } from "astro:assets";
+import { resolveBlogSiteIdentity } from "../utils/site-identity";
+import "../styles/theme.css";
+
+interface Props {
+	title: string;
+	pageTitle?: string | null;
+	description?: string | null;
+	image?: string | null;
+	canonical?: string | null;
+	robots?: string | null;
+	type?: "website" | "article";
+	publishedTime?: string | null;
+	modifiedTime?: string | null;
+	author?: string | null;
+	/** Pass content reference for plugin page contributions on content pages */
+	content?: { collection: string; id: string; slug?: string | null };
+}
+
+const {
+	title,
+	pageTitle,
+	description,
+	image,
+	canonical,
+	robots,
+	type = "website",
+	publishedTime,
+	modifiedTime,
+	author,
+	content,
+} = Astro.props;
+const [settingsData, { entries: configs }, menu] = await Promise.all([
+	getSiteSettings(),
+	getEmDashCollection("site_config", { limit: 1 }),
+	getMenu("primary"),
+]);
+
+const { siteTitle, siteTagline, siteLogo } = resolveBlogSiteIdentity(settingsData);
+const cfg = configs[0]?.data ?? {};
+const phone = cfg.phone ?? "(844) 442-4222";
+const bookUrl = cfg.book_url ?? "#book";
+const fallbackLogo = "/uploads/0d3a8fc547761a9015ed3bc9284e6d76d16f8417.png";
+const logoSrc = siteLogo?.url ?? fallbackLogo;
+const logoAlt = siteLogo?.alt || siteTitle;
+const cityName = (cfg.city_state ?? "Georgetown, KY").replace(/\s+\d{5}(?:-\d{4})?$/, "");
+
+// If title already includes site title (from getSeoMeta), use as-is
+const fullTitle = title.includes(siteTitle) ? title : `${title} — ${siteTitle}`;
+
+// Build public page context for plugin contributions
+// SEO data is passed here and rendered securely by EmDashHead
+const pageCtx = createPublicPageContext({
+	Astro,
+	kind: content ? "content" : "custom",
+	pageType: type,
+	title: fullTitle,
+	pageTitle: pageTitle ?? title,
+	description,
+	canonical,
+	image,
+	content,
+	seo: { ogImage: image, robots },
+	articleMeta: { publishedTime, modifiedTime, author },
+	siteName: siteTitle,
+});
+
+// Check if user is logged in (for showing admin link)
+const isLoggedIn = !!Astro.locals.user;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+		<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Merriweather:wght@700;900&display=swap" rel="stylesheet" />
+		<Font cssVariable="--font-sans" preload />
+		<Font cssVariable="--font-mono" />
+		<title>{fullTitle}</title>
+		<EmDashHead page={pageCtx} />
+		<script is:inline>
+			// Apply theme immediately to prevent flash
+			(function () {
+				var c = document.cookie;
+				var i = c.indexOf("theme=");
+				var theme = i >= 0 ? c.slice(i + 6).split(";")[0] : null;
+				if (theme === "dark" || theme === "light") {
+					document.documentElement.classList.add(theme);
+				} else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+					document.documentElement.classList.add("dark");
+				}
+			})();
+		</script>
+	</head>
+	<body>
+		<EmDashBodyStart page={pageCtx} />
+		<header class="site-header">
+			<div class="header-top">
+				<div class="header-top-inner">
+					<a href={`tel:${phone.replace(/\D/g, "")}`} class="header-phone">
+						<img src="/uploads/phone.svg" alt="" aria-hidden="true" />
+						{phone}
+					</a>
+					<span class="header-location">
+						<img src="/uploads/googlemap.svg" alt="" aria-hidden="true" />
+						<span class="header-location-full">View {cityName} Location</span>
+						<span class="header-location-mobile">{cityName}</span>
+					</span>
+					{isLoggedIn && <a href="/_emdash/admin" class="header-admin">Admin ↗</a>}
+				</div>
+			</div>
+			<nav class="nav">
+				<a href="/" class="site-title">
+					<img src={logoSrc} alt={logoAlt} class="site-logo-img" />
+				</a>
+				<button
+					type="button"
+					class="nav-menu-toggle"
+					aria-label="Toggle menu"
+					aria-controls="primary-menu"
+					aria-expanded="false"
+				>
+					<img src="/uploads/burger-menu.svg" alt="" class="nav-menu-icon nav-menu-icon-open" aria-hidden="true" />
+					<img src="/uploads/close.svg" alt="" class="nav-menu-icon nav-menu-icon-close" aria-hidden="true" />
+				</button>
+				<div class="nav-links" id="primary-menu">
+					{menu?.items.filter(i => i.label !== "Home").map((item) => (
+						<a href={item.url} target={item.target}>{item.label}</a>
+					))}
+				</div>
+				<a href={bookUrl} class="nav-book-btn">BOOK AN APPOINTMENT</a>
+			</nav>
+		</header>
+
+		<main>
+			<slot />
+		</main>
+
+		<footer class="site-footer">
+			<div class="footer-inner">
+				<div class="footer-grid">
+					<div class="footer-brand">
+						<a href="/" class="footer-logo">
+							<img src="/uploads/white-logo.png" alt={logoAlt} class="footer-logo-img" />
+						</a>
+						<p class="footer-tagline">We provide expert, affordable hearing care to help you stay connected to what matters most.</p>
+						<div class="footer-socials">
+							<a href={cfg.facebook_url ?? "#"} target="_blank" rel="noopener" aria-label="Facebook">
+								<img src="/uploads/Facebook.svg" alt="" aria-hidden="true" />
+							</a>
+							<a href={cfg.instagram_url ?? "#"} target="_blank" rel="noopener" aria-label="Instagram">
+								<img src="/uploads/UI2.svg" alt="" aria-hidden="true" />
+							</a>
+							<a href="#" aria-label="LinkedIn">
+								<img src="/uploads/in.svg" alt="" aria-hidden="true" />
+							</a>
+							<a href="#" aria-label="YouTube">
+								<img src="/uploads/youtube.svg" alt="" aria-hidden="true" />
+							</a>
+						</div>
+					</div>
+					<div class="footer-nav">
+						<h4 class="footer-heading">Services</h4>
+						<ul class="footer-links">
+							<li><a href="/services">Hearing Tests</a></li>
+							<li><a href="/services">Diagnostic Services</a></li>
+							<li><a href="/services">Tinnitus</a></li>
+							<li><a href="/services">Ear Wax Removal</a></li>
+							<li><a href="/services">Audiology Services</a></li>
+							<li><a href="/services">Sensorineural Hearing Loss</a></li>
+							<li><a href="/services">Custom Hearing Protection</a></li>
+						</ul>
+					</div>
+					<div class="footer-nav">
+						<h4 class="footer-heading">Hearing Aids</h4>
+						<ul class="footer-links">
+							<li><a href="/hearing-aids">Phonak Hearing Aids</a></li>
+							<li><a href="/hearing-aids">Oticon Hearing Aids</a></li>
+							<li><a href="/hearing-aids">Widex Hearing Aids</a></li>
+							<li><a href="/hearing-aids">ReSound Hearing Aids</a></li>
+							<li><a href="/hearing-aids">Starkey Hearing Aids</a></li>
+							<li><a href="/hearing-aids">Unitron Hearing Aids</a></li>
+							<li><a href="/hearing-aids">Signia Hearing Aids</a></li>
+							<li><a href="/hearing-aids">Lyric Hearing Aids</a></li>
+						</ul>
+					</div>
+					<div class="footer-nav">
+						<h4 class="footer-heading">Quick Links</h4>
+						<ul class="footer-links">
+							<li><a href="/contact">Insurance & Billing</a></li>
+							<li><a href="/pages/about">About Us</a></li>
+							<li><a href="/contact">Contact Us</a></li>
+						</ul>
+					</div>
+				</div>
+				<img
+					src="/uploads/Commonwealth%20audiowaves%20extended%201.png?v=wide"
+					alt=""
+					class="footer-wave"
+					aria-hidden="true"
+				/>
+				<div class="footer-bottom">
+					<p class="footer-copyright footer-copyright-old">
+						© {new Date().getFullYear()} {siteTitle}. All rights reserved. Powered by <a href="https://emdashcms.com">EmDash</a>
+					</p>
+					<p class="footer-copyright footer-copyright-new">
+						&copy; {new Date().getFullYear()} {siteTitle}. | HIPAA | All rights reserved.
+					</p>
+					<nav class="footer-legal" aria-label="Legal links">
+						<a href="/terms">Terms of Use</a>
+						<a href="/privacy">Privacy Policy</a>
+						<a href="/sitemap">Sitemap</a>
+					</nav>
+				</div>
+			</div>
+		</footer>
+
+		<script>
+			// Theme switcher
+			const THEME_REGEX = /theme=([^;]+)/;
+			const themeBtns =
+				document.querySelectorAll<HTMLButtonElement>(".theme-btn");
+			const root = document.documentElement;
+			const nav = document.querySelector<HTMLElement>(".nav");
+			const menuToggle =
+				document.querySelector<HTMLButtonElement>(".nav-menu-toggle");
+			const navLinks = document.querySelector<HTMLElement>(".nav-links");
+
+			menuToggle?.addEventListener("click", () => {
+				const isOpen = nav?.classList.toggle("is-menu-open") ?? false;
+				menuToggle.setAttribute("aria-expanded", String(isOpen));
+			});
+
+			navLinks?.querySelectorAll("a").forEach((link) => {
+				link.addEventListener("click", () => {
+					nav?.classList.remove("is-menu-open");
+					menuToggle?.setAttribute("aria-expanded", "false");
+				});
+			});
+
+			function setCookie(
+				name: string,
+				value: string,
+				maxAge: number = 31536000
+			) {
+				const secure = location.protocol === "https:" ? "; Secure" : "";
+				if (value === "") {
+					document.cookie = `${name}=; path=/; max-age=0; SameSite=Lax${secure}`;
+				} else {
+					document.cookie = `${name}=${value}; path=/; max-age=${maxAge}; SameSite=Lax${secure}`;
+				}
+			}
+
+			function setTheme(theme: string) {
+				if (theme === "system") {
+					setCookie("theme", "");
+					root.classList.remove("light", "dark");
+					if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+						root.classList.add("dark");
+					}
+				} else {
+					setCookie("theme", theme);
+					root.classList.remove("light", "dark");
+					root.classList.add(theme);
+				}
+				updateActiveBtn(theme);
+			}
+
+			function updateActiveBtn(theme: string) {
+				themeBtns.forEach((btn) => {
+					btn.classList.toggle("active", btn.dataset.theme === theme);
+				});
+			}
+
+			function getStoredTheme(): string {
+				const match = document.cookie.match(THEME_REGEX);
+				return match ? match[1] : "system";
+			}
+
+			// Initialize
+			const storedTheme = getStoredTheme();
+			setTheme(storedTheme);
+
+			themeBtns.forEach((btn) => {
+				btn.addEventListener("click", () => {
+					setTheme(btn.dataset.theme || "system");
+				});
+			});
+
+			// Listen for system preference changes
+			window
+				.matchMedia("(prefers-color-scheme: dark)")
+				.addEventListener("change", (e) => {
+					if (getStoredTheme() === "system") {
+						root.classList.toggle("dark", e.matches);
+					}
+				});
+		</script>
+
+		<style is:global>
+			/*
+			 * Establish layer order: "base" has lower priority than unlayered
+			 * styles, so theme.css overrides always win regardless of source
+			 * order in the bundled CSS.
+			 */
+			@layer base;
+
+			@layer base {
+				*:where(:not([class*="emdash"]):not([class*="ec-"])),
+				*:where(:not([class*="emdash"]):not([class*="ec-"]))::before,
+				*:where(:not([class*="emdash"]):not([class*="ec-"]))::after {
+					box-sizing: border-box;
+				}
+
+				body,
+				h1,
+				h2,
+				h3,
+				h4,
+				h5,
+				h6,
+				p,
+				ul,
+				ol,
+				figure,
+				blockquote,
+				dl,
+				dd {
+					margin: 0;
+				}
+
+				ul,
+				ol {
+					padding: 0;
+				}
+
+				:root {
+					/* Colors - Light mode (default) */
+					--color-bg: #ffffff;
+					--color-bg-subtle: #fafafa;
+					--color-text: #1a1a1a;
+					--color-text-secondary: #525252;
+					--color-muted: #8b8b8b;
+					--color-border: #e5e5e5;
+					--color-border-subtle: #f0f0f0;
+					--color-surface: #f7f7f7;
+					--color-accent: #0076BA;
+					--color-accent-hover: #005a8e;
+					--color-on-accent: white;
+					--color-heading: #0076BA;
+					--color-accent-ring: color-mix(
+						in srgb,
+						var(--color-accent) 25%,
+						transparent
+					);
+
+					/* EmDash search theming */
+					--emdash-search-bg: var(--color-bg);
+					--emdash-search-text: var(--color-text);
+					--emdash-search-muted: var(--color-muted);
+					--emdash-search-border: var(--color-border);
+					--emdash-search-hover: var(--color-surface);
+					--emdash-search-highlight: var(--color-text);
+
+					/* Type scale - more refined */
+					--font-size-xs: 0.8125rem;
+					--font-size-sm: 0.875rem;
+					--font-size-base: 1rem;
+					--font-size-lg: 1.125rem;
+					--font-size-xl: 1.25rem;
+					--font-size-2xl: 1.5rem;
+					--font-size-3xl: 2rem;
+					--font-size-4xl: 2.5rem;
+					--font-size-5xl: 3.5rem;
+
+					/* Line heights */
+					--leading-tight: 1.15;
+					--leading-snug: 1.3;
+					--leading-normal: 1.5;
+					--leading-relaxed: 1.7;
+
+					/* Spacing - more generous */
+					--spacing-1: 0.25rem;
+					--spacing-2: 0.5rem;
+					--spacing-3: 0.75rem;
+					--spacing-4: 1rem;
+					--spacing-5: 1.25rem;
+					--spacing-6: 1.5rem;
+					--spacing-8: 2rem;
+					--spacing-10: 2.5rem;
+					--spacing-12: 3rem;
+					--spacing-16: 4rem;
+					--spacing-20: 5rem;
+					--spacing-24: 6rem;
+
+					/* Legacy spacing aliases */
+					--spacing-xs: var(--spacing-1);
+					--spacing-sm: var(--spacing-2);
+					--spacing-md: var(--spacing-4);
+					--spacing-lg: var(--spacing-6);
+					--spacing-xl: var(--spacing-8);
+					--spacing-2xl: var(--spacing-12);
+					--spacing-3xl: var(--spacing-16);
+
+					/* Layout - wider for three-column */
+					--content-width: 680px;
+					--wide-width: 1440px;
+					--max-width: var(--content-width);
+					--gutter-width: 200px;
+					--radius: 4px;
+					--radius-lg: 8px;
+
+					/* Transitions */
+					--transition-fast: 120ms ease;
+					--transition-base: 180ms ease;
+
+					/* Nav */
+					--nav-height: 64px;
+
+					/* Search */
+					--search-input-width: 180px;
+
+					/* Article layout */
+					--meta-col-width: 180px;
+
+					/* Avatar sizes */
+					--avatar-size-xs: 18px;
+					--avatar-size-sm: 20px;
+					--avatar-size-md: 24px;
+					--avatar-size-lg: 32px;
+
+					/* Letter spacing */
+					--tracking-tight: -0.03em;
+					--tracking-snug: -0.02em;
+					--tracking-wide: 0.06em;
+					--tracking-wider: 0.08em;
+
+					/* Tag pill */
+					--tag-padding-y: 2px;
+
+					/* Shadows */
+					--shadow-dropdown: 0 8px 30px rgba(0, 0, 0, 0.12);
+					--shadow-btn-active: 0 1px 2px rgba(0, 0, 0, 0.05);
+				}
+
+				/* Dark mode via system preference (when no explicit class) */
+				@media (prefers-color-scheme: dark) {
+					:root:not(.light) {
+						--color-bg: #0d0d0d;
+						--color-bg-subtle: #141414;
+						--color-text: #ededed;
+						--color-text-secondary: #a0a0a0;
+						--color-muted: #6b6b6b;
+						--color-border: #2a2a2a;
+						--color-border-subtle: #1f1f1f;
+						--color-surface: #181818;
+						--color-accent: #4d9fff;
+						--color-accent-hover: #6eb0ff;
+					}
+				}
+
+				/* Explicit dark mode */
+				:root.dark {
+					--color-bg: #0d0d0d;
+					--color-bg-subtle: #141414;
+					--color-text: #ededed;
+					--color-text-secondary: #a0a0a0;
+					--color-muted: #6b6b6b;
+					--color-border: #2a2a2a;
+					--color-border-subtle: #1f1f1f;
+					--color-surface: #181818;
+					--color-accent: #4d9fff;
+					--color-accent-hover: #6eb0ff;
+				}
+
+				html {
+					scroll-behavior: smooth;
+				}
+
+				body {
+					font-family: var(--font-sans);
+					font-size: var(--font-size-base);
+					line-height: var(--leading-relaxed);
+					color: var(--color-text);
+					background: var(--color-bg);
+					-webkit-font-smoothing: antialiased;
+					-moz-osx-font-smoothing: grayscale;
+					min-height: 100vh;
+				}
+
+				a:where(:not([class*="emdash"]):not([class*="ec-"])) {
+					color: var(--color-accent);
+					text-decoration: none;
+					transition: color var(--transition-fast);
+				}
+
+				a:where(:not([class*="emdash"]):not([class*="ec-"])):hover {
+					color: var(--color-accent-hover);
+				}
+
+				img {
+					max-width: 100%;
+					height: auto;
+					display: block;
+				}
+
+				h1,
+				h2,
+				h3,
+				h4,
+				h5,
+				h6 {
+					font-family: var(--font-sans);
+					line-height: var(--leading-tight);
+					font-weight: 600;
+					letter-spacing: var(--tracking-snug);
+					color: var(--color-heading);
+				}
+
+				h1 {
+					font-weight: 700;
+					letter-spacing: var(--tracking-tight);
+				}
+
+				::selection {
+					background: var(--color-accent);
+					color: white;
+				}
+			}
+		</style>
+
+		<style>
+			/* ── Header ── */
+			.site-header {
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				z-index: 100;
+				background: transparent;
+				box-shadow: none;
+			}
+
+			.header-top {
+				background: #fff;
+				padding: 0.45rem 0;
+				border-bottom: 0;
+			}
+
+			.header-top-inner {
+				max-width: 1440px;
+				margin: 0 auto;
+				padding: 0 5rem;
+				display: flex;
+				align-items: center;
+				justify-content: flex-end;
+				gap: 4.25rem;
+				min-height: 30px;
+			}
+
+			.header-phone {
+				display: flex;
+				align-items: center;
+				gap: 1.45rem;
+				color: #000;
+				text-decoration: none;
+				font-size: 1rem;
+				font-weight: 500;
+				transition: opacity 0.2s;
+			}
+
+			.header-phone img {
+				width: 18px;
+				height: 18px;
+				object-fit: contain;
+			}
+
+			.header-phone:hover { opacity: 0.85; color: #000; }
+
+			.header-location {
+				display: flex;
+				align-items: center;
+				gap: 1.45rem;
+				color: #000;
+				font-size: 1rem;
+				font-weight: 500;
+			}
+
+			.header-location img {
+				width: 15px;
+				height: 20px;
+				object-fit: contain;
+			}
+
+			.header-location-mobile {
+				display: none;
+			}
+
+			.header-admin {
+				margin-left: auto;
+				font-size: 0.75rem;
+				color: #333;
+				text-decoration: none;
+			}
+
+			.header-admin:hover { color: #0076BA; }
+
+			.nav {
+				display: flex;
+				justify-content: flex-start;
+				align-items: center;
+				width: calc(100% - 28px);
+				max-width: 1180px;
+				min-height: 100px;
+				margin: 1.45rem auto 0;
+				padding: 1.35rem 3rem;
+				gap: 2rem;
+				background: rgba(255,255,255,0.98);
+				border-radius: 22px;
+				box-shadow: 0 12px 34px rgba(0,0,0,0.12);
+			}
+
+			.site-title {
+				text-decoration: none;
+				flex-shrink: 0;
+			}
+
+			.site-name {
+				font-size: 1.15rem;
+				font-weight: 800;
+				color: #0076BA;
+				letter-spacing: -0.02em;
+			}
+
+			.site-logo-img {
+				height: 58px;
+				width: auto;
+				display: block;
+			}
+
+			.nav-links {
+				display: flex;
+				align-items: center;
+				gap: 1.9rem;
+				margin-left: 1.3rem;
+				font-size: 1rem;
+				font-weight: 500;
+			}
+
+			.nav-links a {
+				display: inline-flex;
+				align-items: center;
+				gap: 0.45rem;
+				text-decoration: none;
+				color: #1b1b1b;
+				transition: color 0.2s;
+				white-space: nowrap;
+			}
+
+			.nav-links a:not(:last-child)::after {
+				content: "";
+				width: 0;
+				height: 0;
+				border-left: 0.28rem solid transparent;
+				border-right: 0.28rem solid transparent;
+				border-top: 0.34rem solid currentColor;
+				margin-top: 0.12rem;
+			}
+
+			.nav-links a:hover { color: #0076BA; }
+
+			.nav-menu-toggle {
+				display: none;
+				width: 42px;
+				height: 42px;
+				place-items: center;
+				border: 1px solid rgba(0,0,0,0.12);
+				border-radius: 9px;
+				background: #fff;
+				padding: 0;
+				cursor: pointer;
+			}
+
+			.nav-menu-icon {
+				display: block;
+				width: 22px;
+				height: 22px;
+				object-fit: contain;
+			}
+
+			.nav-menu-icon-close {
+				display: none;
+			}
+
+			.nav.is-menu-open .nav-menu-icon-open {
+				display: none;
+			}
+
+			.nav.is-menu-open .nav-menu-icon-close {
+				display: block;
+			}
+
+			.nav-book-btn {
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				gap: 0.75rem;
+				padding: 1rem 1.85rem;
+				background: #0076BA;
+				color: #fff;
+				font-size: 1rem;
+				font-weight: 600;
+				letter-spacing: 0;
+				border-radius: 8px;
+				text-decoration: none;
+				white-space: nowrap;
+				transition: background 0.2s;
+				flex-shrink: 0;
+				margin-left: auto;
+			}
+
+			.nav-book-btn::after {
+				content: "";
+				display: inline-block;
+				width: 1rem;
+				height: 0.6875rem;
+				background: currentColor;
+				-webkit-mask: url("/uploads/right-aerow-button.svg") center / contain no-repeat;
+				mask: url("/uploads/right-aerow-button.svg") center / contain no-repeat;
+			}
+
+			.nav-book-btn:hover { background: #005a8e; color: #fff; }
+
+			main {
+				min-height: 60vh;
+			}
+
+			/* ── Footer ── */
+			.site-footer {
+				background: #333438;
+				color: #f7f7f7;
+				position: relative;
+				overflow: hidden;
+			}
+
+			.footer-inner {
+				max-width: 1440px;
+				margin: 0 auto;
+				padding: 3.25rem 2rem 1.8rem;
+				position: relative;
+				z-index: 1;
+			}
+
+			.footer-grid {
+				display: grid;
+				grid-template-columns: 1.45fr 0.95fr 1.05fr 0.95fr;
+				gap: 4.25rem;
+				align-items: start;
+				margin-bottom: 3rem;
+			}
+
+			.footer-brand {
+				max-width: 390px;
+				text-align: center;
+			}
+
+			.footer-logo {
+				text-decoration: none;
+				font-size: 1.1rem;
+				font-weight: 800;
+				color: #fff;
+				letter-spacing: -0.02em;
+				display: block;
+				margin-bottom: 1.45rem;
+			}
+
+			.footer-logo-img {
+				width: min(100%, 410px);
+				height: auto;
+			}
+
+			.footer-tagline {
+				font-size: 1.03rem;
+				color: #f4f4f4;
+				line-height: 1.28;
+				margin-bottom: 2.1rem;
+			}
+
+			.footer-address {
+				font-size: 0.66rem;
+				color: #8fa8be;
+				line-height: 1.6;
+				margin-bottom: 0.5rem;
+			}
+
+			.footer-phone {
+				font-size: 0.66rem;
+				color: #cdd8e3;
+				text-decoration: none;
+				display: block;
+				margin-bottom: 1rem;
+			}
+
+			.footer-phone:hover { color: #fff; }
+
+			.footer-socials {
+				display: flex;
+				justify-content: center;
+				gap: 1rem;
+			}
+
+			.footer-socials a {
+				display: grid;
+				width: 24px;
+				height: 24px;
+				place-items: center;
+				color: #fff;
+				text-decoration: none;
+				transition: color 0.2s;
+			}
+
+			.footer-socials img {
+				width: 22px;
+				height: 22px;
+				object-fit: contain;
+			}
+
+			.footer-socials a:hover { color: #d7d7d7; }
+
+			.footer-nav { min-width: 0; }
+
+			.footer-heading {
+				font-size: 1.85rem;
+				font-weight: 400;
+				letter-spacing: 0;
+				color: #fff;
+				margin-bottom: 0.65rem;
+			}
+
+			.footer-links { list-style: none; }
+
+			.footer-links li { margin-bottom: 0.52rem; }
+
+			.footer-links a {
+				color: #f4f4f4;
+				text-decoration: none;
+				font-size: 1.03rem;
+				line-height: 1.26;
+				transition: color 0.2s;
+			}
+
+			.footer-links a:hover { color: #d7d7d7; }
+
+			.footer-wave {
+				display: block;
+				position: relative;
+				left: 50%;
+				width: min(100vw, 1660px);
+				max-width: none;
+				height: auto;
+				margin: 0 0 1.85rem;
+				opacity: 1;
+				transform: translateX(-50%);
+			}
+
+			.footer-bottom {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				gap: 1.5rem;
+			}
+
+			.footer-copyright {
+				font-size: 0.92rem;
+				color: #fff;
+			}
+
+			.footer-copyright-old { display: none; }
+
+			.footer-legal {
+				display: flex;
+				gap: 1.75rem;
+			}
+
+			.footer-legal a {
+				color: #fff;
+				font-size: 0.92rem;
+				text-decoration: none;
+			}
+
+			.footer-legal a:hover { color: #d7d7d7; }
+
+			@media (max-width: 900px) {
+				.footer-grid { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+				.footer-brand { grid-column: span 2; max-width: none; }
+				.footer-bottom { align-items: flex-start; flex-direction: column; }
+				.nav-links {
+					order: 3;
+					width: 100%;
+					justify-content: center;
+					flex-wrap: wrap;
+					gap: 0.85rem 1.25rem;
+					margin-left: 0;
+					font-size: 0.95rem;
+				}
+				.site-header { position: relative; background: #fff; }
+				.nav {
+					width: 100%;
+					min-height: auto;
+					margin: 0;
+					padding: 0.9rem 1rem 1rem;
+					flex-wrap: wrap;
+					gap: 0.9rem 1rem;
+					box-shadow: none;
+					border-radius: 0;
+				}
+				.site-logo-img { height: 42px; }
+				.nav-book-btn {
+					margin-left: auto;
+					padding: 0.72rem 1.1rem;
+					font-size: 0.82rem;
+				}
+			}
+
+			@media (max-width: 640px) {
+				.header-top { padding: 0.35rem 0; }
+				.header-top-inner {
+					min-height: 28px;
+					padding: 0 0.75rem;
+					justify-content: center;
+					gap: 0.85rem;
+				}
+				.header-phone,
+				.header-location {
+					gap: 0.35rem;
+					font-size: 0.78rem;
+					font-weight: 700;
+					line-height: 1;
+					white-space: nowrap;
+				}
+				.header-phone img {
+					width: 14px;
+					height: 14px;
+				}
+				.header-location {
+					display: flex;
+				}
+				.header-location img {
+					width: 12px;
+					height: 16px;
+				}
+				.header-location-full {
+					display: none;
+				}
+				.header-location-mobile {
+					display: inline;
+				}
+				.header-admin {
+					display: none;
+				}
+				.nav {
+					justify-content: space-between;
+					gap: 0.7rem;
+					padding: 0.75rem 1rem 0.9rem;
+				}
+				.nav-menu-toggle {
+					display: grid;
+				}
+				.nav-links {
+					display: none;
+					gap: 0;
+					align-items: stretch;
+					flex-direction: column;
+					width: 100%;
+					padding: 0.4rem;
+					border-radius: 12px;
+					background: #f4f6f7;
+					font-size: 0.95rem;
+				}
+				.nav.is-menu-open .nav-links {
+					display: flex;
+				}
+				.nav-links a {
+					justify-content: space-between;
+					padding: 0.8rem 0.9rem;
+					border-radius: 8px;
+				}
+				.nav-links a:hover {
+					background: #fff;
+				}
+				.nav-book-btn {
+					display: none;
+				}
+				.footer-grid { grid-template-columns: 1fr; }
+				.footer-brand { grid-column: span 1; max-width: none; }
+				.footer-inner { padding-inline: 1.25rem; }
+				.footer-heading { font-size: 1.5rem; }
+				.footer-wave {
+					width: 100vw;
+				}
+				.footer-legal { flex-wrap: wrap; gap: 0.8rem 1.25rem; }
+			}
+		</style>
+
+		<script>
+			// ⌘K / Ctrl+K to focus search
+			document.addEventListener("keydown", (e) => {
+				if ((e.metaKey || e.ctrlKey) && e.key === "k") {
+					e.preventDefault();
+					const searchInput = document.querySelector(
+						".site-search-input"
+					) as HTMLInputElement;
+					if (searchInput) {
+						searchInput.focus();
+					}
+				}
+			});
+		</script>
+		<EmDashBodyEnd page={pageCtx} />
+	</body>
+</html>

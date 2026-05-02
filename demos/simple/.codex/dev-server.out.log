@@ -1,0 +1,451 @@
+
+> emdash-demo@0.0.3 dev F:\PROJECTS\CAMERON-STARATED-PORJECTS-17-10-2019\emDash-websites\Common Wealth\demos\simple
+> astro dev "--" "--host" "127.0.0.1" "--port" "4321"
+
+[2m06:56:46[22m [34m[@astrojs/node][39m Enabling sessions with filesystem storage
+
+
+  [1m[36m— E M D A S H —[39m[22m
+   
+
+  [2m›[22m Admin UI    [36m/_emdash/admin[39m
+  [2m›[22m API         [36m/_emdash/api/*[39m
+
+[vite] connected.
+[2m06:57:20[22m [34m[types][39m Generated [2m1ms[22m
+[33m[1m06:57:20[22m [WARN] [content][39m Content config not loaded
+[2m06:57:21[22m [34m[vite][39m Re-optimizing dependencies because vite config has changed
+[42m[1m astro [22m[49m [32mv6.0.1[39m [2mready in[22m 40788 [2mms[22m
+[2m┃[22m Local    [36mhttp://localhost:4321/[39m
+[2m┃[22m Network  [2muse --host to expose[22m
+[2m06:57:21[22m [32mwatching for file changes...[39m
+[2m06:57:42[22m [34m[200][39m [34mPOST[39m /_emdash/api/typegen [2m16274ms[22m
+[33m[1m06:58:00[22m [WARN] [cache][39m `cache.set()` was called but caching is not enabled. Configure a cache provider in your Astro config under `experimental.cache` to enable caching.
+[2m06:58:00[22m [34m[200][39m / [2m617ms[22m
+[2m06:58:00[22m [34m[200][39m / [2m622ms[22m
+[2m06:58:40[22m [34m[200][39m / [2m35ms[22m
+[2m07:01:35[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m07:01:40[22m [34m[200][39m / [2m118ms[22m
+[2m07:02:55[22m [34m[watch][39m src/layouts/Base.astro
+[2m07:02:59[22m [34m[200][39m / [2m89ms[22m
+[2m07:03:27[22m [34m[watch][39m src/layouts/Base.astro
+[2m07:03:31[22m [34m[200][39m / [2m52ms[22m
+[2m07:03:43[22m [34m[watch][39m src/layouts/Base.astro
+[2m07:03:44[22m [34m[200][39m / [2m51ms[22m
+[2m07:04:11[22m [34m[watch][39m src/layouts/Base.astro
+[2m07:04:14[22m [34m[200][39m / [2m60ms[22m
+[2m07:04:19[22m [34m[watch][39m src/layouts/Base.astro
+[2m07:04:19[22m [34m[200][39m / [2m48ms[22m
+[2m07:04:31[22m [34m[watch][39m /src/layouts/Base.astro?astro&type=style&index=0&lang.css, /src/layouts/Base.astro?astro&type=style&index=1&lang.css
+[2m07:04:31[22m [34m[watch][39m src/layouts/Base.astro
+[vite] program reload
+[2m07:04:40[22m [34m[watch][39m /src/layouts/Base.astro?astro&type=style&index=0&lang.css, /src/layouts/Base.astro?astro&type=style&index=1&lang.css
+[2m07:04:40[22m [34m[watch][39m src/layouts/Base.astro
+[vite] program reload
+[2m07:04:51[22m [34m[watch][39m /src/layouts/Base.astro?astro&type=style&index=0&lang.css, /src/layouts/Base.astro?astro&type=style&index=1&lang.css
+[2m07:04:51[22m [34m[watch][39m src/layouts/Base.astro
+[vite] program reload
+[2m07:04:58[22m [34m[200][39m / [2m76ms[22m
+[2m07:05:26[22m [34m[200][39m / [2m23ms[22m
+[2m07:06:13[22m [34m[200][39m / [2m31ms[22m
+[2m07:06:44[22m [34m[200][39m / [2m19ms[22m
+[2m07:07:00[22m [34m[200][39m / [2m18ms[22m
+[2m07:08:56[22m [34m[200][39m / [2m31ms[22m
+[2m07:09:17[22m [34m[200][39m / [2m33ms[22m
+[2m07:09:28[22m [34m[watch][39m src/layouts/Base.astro
+[2m07:09:31[22m [34m[200][39m / [2m102ms[22m
+[2m07:09:44[22m [34m[200][39m / [2m31ms[22m
+[2m07:10:54[22m [34m[200][39m / [2m22ms[22m
+[2m07:11:02[22m [34m[watch][39m /src/layouts/Base.astro?astro&type=style&index=0&lang.css, /src/layouts/Base.astro?astro&type=style&index=1&lang.css
+[2m07:11:02[22m [34m[watch][39m src/layouts/Base.astro
+[vite] program reload
+[2m07:11:07[22m [34m[200][39m / [2m67ms[22m
+[2m07:11:07[22m [34m[200][39m / [2m19ms[22m
+[2m07:11:17[22m [34m[200][39m / [2m29ms[22m
+[2m07:11:27[22m [34m[200][39m / [2m25ms[22m
+[2m07:11:37[22m [34m[200][39m / [2m28ms[22m
+[2m07:12:07[22m [34m[watch][39m /src/layouts/Base.astro?astro&type=style&index=0&lang.css, /src/layouts/Base.astro?astro&type=style&index=1&lang.css
+[2m07:12:07[22m [34m[watch][39m src/layouts/Base.astro
+[vite] program reload
+[2m07:12:13[22m [34m[200][39m / [2m80ms[22m
+[2m07:13:56[22m [34m[200][39m / [2m20ms[22m
+[2m07:16:53[22m [34m[200][39m / [2m18ms[22m
+[2m07:16:58[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m07:17:05[22m [34m[200][39m / [2m101ms[22m
+[2m07:19:35[22m [34m[200][39m / [2m46ms[22m
+[2m07:26:27[22m [34m[200][39m / [2m26ms[22m
+[2m07:49:38[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m07:49:38[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m07:50:00[22m [34m[200][39m / [2m57ms[22m
+[2m07:51:08[22m [34m[200][39m / [2m18ms[22m
+[2m07:52:32[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m07:52:32[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m07:52:41[22m [34m[200][39m / [2m32ms[22m
+[2m07:53:15[22m [34m[200][39m / [2m18ms[22m
+[2m07:54:39[22m [34m[200][39m / [2m17ms[22m
+[2m07:55:10[22m [34m[200][39m / [2m20ms[22m
+[2m07:58:00[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m07:58:00[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m07:58:06[22m [34m[200][39m / [2m54ms[22m
+[2m07:58:08[22m [34m[200][39m / [2m15ms[22m
+[2m07:58:37[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m07:58:37[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m07:58:49[22m [34m[200][39m / [2m19ms[22m
+[2m07:59:22[22m [34m[200][39m / [2m15ms[22m
+[2m08:00:01[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m08:00:01[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m08:00:11[22m [34m[200][39m / [2m29ms[22m
+[2m08:00:21[22m [34m[200][39m / [2m19ms[22m
+[2m08:01:43[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m08:01:43[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m08:01:47[22m [34m[200][39m / [2m16ms[22m
+[2m08:01:52[22m [34m[200][39m / [2m14ms[22m
+[2m08:02:09[22m [34m[200][39m / [2m15ms[22m
+[2m08:03:46[22m [34m[200][39m / [2m19ms[22m
+[2m08:04:12[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m08:04:12[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m08:04:23[22m [34m[200][39m / [2m44ms[22m
+[2m08:08:02[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m08:08:04[22m [34m[200][39m / [2m71ms[22m
+[2m08:08:12[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m08:08:12[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m08:08:25[22m [34m[200][39m / [2m18ms[22m
+[2m08:08:30[22m [34m[200][39m / [2m15ms[22m
+[2m08:09:12[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m08:09:12[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m08:09:22[22m [34m[200][39m / [2m26ms[22m
+[2m08:09:51[22m [34m[200][39m / [2m34ms[22m
+[2m08:09:54[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m08:09:54[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m08:10:00[22m [34m[200][39m / [2m56ms[22m
+[2m08:10:03[22m [34m[200][39m / [2m15ms[22m
+[2m08:11:22[22m [34m[200][39m / [2m17ms[22m
+[2m08:12:27[22m [34m[200][39m / [2m29ms[22m
+[2m08:13:03[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m08:13:03[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m08:13:13[22m [34m[200][39m / [2m43ms[22m
+[2m08:13:55[22m [34m[200][39m / [2m16ms[22m
+[2m08:14:19[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m08:14:19[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m08:14:29[22m [34m[200][39m / [2m76ms[22m
+[2m08:14:29[22m [34m[200][39m / [2m105ms[22m
+[2m08:15:03[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m08:15:03[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m08:15:12[22m [34m[200][39m / [2m17ms[22m
+[2m08:15:27[22m [34m[200][39m / [2m17ms[22m
+[2m08:16:28[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m08:16:28[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m08:16:42[22m [34m[200][39m / [2m61ms[22m
+[2m08:16:52[22m [34m[200][39m / [2m48ms[22m
+[2m08:18:13[22m [34m[200][39m / [2m42ms[22m
+[2m08:18:22[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m08:18:22[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m08:18:34[22m [34m[200][39m / [2m38ms[22m
+[2m08:19:32[22m [34m[200][39m / [2m20ms[22m
+[2m08:20:25[22m [34m[200][39m / [2m17ms[22m
+[2m08:21:06[22m [34m[200][39m / [2m17ms[22m
+[2m08:21:07[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m08:21:07[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m08:21:12[22m [34m[200][39m / [2m25ms[22m
+[2m08:21:18[22m [34m[200][39m / [2m14ms[22m
+[2m08:22:13[22m [34m[200][39m / [2m15ms[22m
+[2m08:23:03[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m08:23:03[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m08:23:15[22m [34m[200][39m / [2m89ms[22m
+[2m08:23:17[22m [34m[200][39m / [2m18ms[22m
+[2m08:23:30[22m [34m[200][39m / [2m15ms[22m
+[2m08:24:12[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m08:24:12[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m08:24:22[22m [34m[200][39m / [2m37ms[22m
+[2m08:27:02[22m [34m[200][39m / [2m55ms[22m
+[2m08:32:30[22m [34m[watch][39m /src/layouts/Base.astro?astro&type=style&index=0&lang.css, /src/layouts/Base.astro?astro&type=style&index=1&lang.css
+[2m08:32:30[22m [34m[watch][39m src/layouts/Base.astro
+[vite] program reload
+[2m08:32:47[22m [34m[watch][39m /src/layouts/Base.astro?astro&type=style&index=0&lang.css, /src/layouts/Base.astro?astro&type=style&index=1&lang.css
+[2m08:32:47[22m [34m[watch][39m src/layouts/Base.astro
+[vite] program reload
+[2m08:33:00[22m [34m[watch][39m /src/layouts/Base.astro?astro&type=style&index=0&lang.css, /src/layouts/Base.astro?astro&type=style&index=1&lang.css
+[2m08:33:00[22m [34m[watch][39m src/layouts/Base.astro
+[vite] program reload
+[2m08:33:23[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m08:33:23[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m08:33:30[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m08:33:30[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m08:33:48[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m08:33:48[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m08:34:33[22m [34m[200][39m / [2m106ms[22m
+[2m08:35:44[22m [34m[200][39m / [2m16ms[22m
+[2m08:36:12[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m08:36:15[22m [34m[200][39m / [2m65ms[22m
+[2m08:36:34[22m [34m[200][39m / [2m16ms[22m
+[2m08:44:01[22m [33m[404][39m /services [2m39ms[22m
+[2m08:44:03[22m [34m[200][39m / [2m15ms[22m
+[2m08:44:05[22m [33m[404][39m /services [2m9ms[22m
+[2m08:44:09[22m [34m[200][39m / [2m17ms[22m
+[2m08:44:43[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m08:44:43[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m08:45:01[22m [34m[200][39m / [2m20ms[22m
+[2m08:48:56[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m08:48:56[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m08:49:16[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m08:49:16[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m08:49:34[22m [34m[200][39m / [2m23ms[22m
+[2m08:49:35[22m [34m[200][39m / [2m13ms[22m
+[2m08:50:30[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m08:50:30[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m08:50:45[22m [34m[200][39m / [2m20ms[22m
+[2m08:50:48[22m [34m[200][39m / [2m14ms[22m
+[2m08:51:12[22m [34m[200][39m / [2m18ms[22m
+[2m08:51:29[22m [34m[200][39m / [2m24ms[22m
+[2m08:51:29[22m [34m[200][39m / [2m28ms[22m
+[2m08:53:46[22m [34m[watch][39m src/layouts/Base.astro
+[2m08:53:49[22m [34m[200][39m / [2m66ms[22m
+[2m08:53:56[22m [34m[watch][39m /src/layouts/Base.astro?astro&type=style&index=0&lang.css, /src/layouts/Base.astro?astro&type=style&index=1&lang.css
+[2m08:53:56[22m [34m[watch][39m src/layouts/Base.astro
+[vite] program reload
+[2m08:54:05[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m08:54:05[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m08:54:25[22m [34m[200][39m / [2m68ms[22m
+[2m08:55:53[22m [34m[200][39m / [2m23ms[22m
+[2m08:56:07[22m [33m[404][39m /hearing-aids [2m30ms[22m
+[2m08:56:09[22m [34m[200][39m / [2m18ms[22m
+[2m08:56:11[22m [34m[watch][39m /src/layouts/Base.astro?astro&type=style&index=0&lang.css, /src/layouts/Base.astro?astro&type=style&index=1&lang.css
+[2m08:56:11[22m [34m[watch][39m src/layouts/Base.astro
+[vite] program reload
+[2m08:57:34[22m [34m[watch][39m /src/layouts/Base.astro?astro&type=style&index=0&lang.css, /src/layouts/Base.astro?astro&type=style&index=1&lang.css
+[2m08:57:34[22m [34m[watch][39m src/layouts/Base.astro
+[vite] program reload
+[2m09:00:40[22m [34m[200][39m / [2m100ms[22m
+[2m09:00:53[22m [34m[200][39m / [2m17ms[22m
+[2m09:01:11[22m [34m[200][39m / [2m15ms[22m
+[2m09:01:21[22m [34m[watch][39m /src/layouts/Base.astro?astro&type=style&index=0&lang.css, /src/layouts/Base.astro?astro&type=style&index=1&lang.css
+[2m09:01:21[22m [34m[watch][39m src/layouts/Base.astro
+[vite] program reload
+[2m09:01:24[22m [34m[200][39m / [2m65ms[22m
+[2m09:01:39[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m09:01:39[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m09:01:51[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m09:01:51[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m09:02:10[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m09:02:10[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m09:02:38[22m [34m[200][39m / [2m26ms[22m
+[2m09:03:07[22m [34m[200][39m / [2m32ms[22m
+[2m09:05:17[22m [34m[200][39m / [2m21ms[22m
+[2m09:05:25[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m09:05:25[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m09:05:59[22m [34m[200][39m / [2m17ms[22m
+[2m09:07:00[22m [34m[200][39m / [2m20ms[22m
+[2m09:07:59[22m [34m[200][39m / [2m35ms[22m
+[2m09:08:04[22m [34m[200][39m / [2m19ms[22m
+[2m09:09:47[22m [34m[200][39m / [2m34ms[22m
+[2m09:10:08[22m [34m[200][39m / [2m17ms[22m
+[2m09:10:52[22m [34m[200][39m / [2m20ms[22m
+[2m09:11:15[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m09:11:15[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m09:11:31[22m [34m[200][39m / [2m18ms[22m
+[2m09:11:43[22m [34m[200][39m / [2m17ms[22m
+[2m09:13:10[22m [34m[200][39m / [2m21ms[22m
+[2m09:13:16[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m09:13:16[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m09:13:21[22m [34m[200][39m / [2m23ms[22m
+[2m09:13:54[22m [34m[200][39m / [2m17ms[22m
+[2m09:14:41[22m [34m[200][39m /posts/tinnitus-causes-symptoms-treatment [2m179ms[22m
+[2m09:14:42[22m [34m[200][39m /_emdash/api/media/file/01KQJ0K2HQ7MBS53W319M1Y2V4.jpg [2m5ms[22m
+[2m09:14:48[22m [34m[200][39m / [2m19ms[22m
+[2m09:16:42[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m09:16:42[22m [34m[200][39m /posts/tinnitus-causes-symptoms-treatment [2m25ms[22m
+[2m09:17:02[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m09:17:02[22m [34m[200][39m /posts/tinnitus-causes-symptoms-treatment [2m20ms[22m
+[2m09:17:20[22m [34m[200][39m / [2m105ms[22m
+[2m09:17:25[22m [34m[200][39m / [2m16ms[22m
+[2m09:17:35[22m [34m[200][39m / [2m23ms[22m
+[2m09:20:41[22m [34m[200][39m / [2m32ms[22m
+[2m09:21:19[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m09:21:19[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m09:21:29[22m [34m[200][39m / [2m26ms[22m
+[2m09:23:59[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m09:23:59[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m09:25:16[22m [34m[200][39m / [2m19ms[22m
+[2m09:25:36[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m09:25:36[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m09:25:49[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m09:25:49[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m09:27:08[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m09:27:08[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m09:29:15[22m [34m[200][39m / [2m19ms[22m
+[2m09:29:16[22m [34m[200][39m / [2m20ms[22m
+[2m09:29:16[22m [34m[200][39m / [2m15ms[22m
+[2m09:31:06[22m [34m[watch][39m /src/layouts/Base.astro?astro&type=style&index=0&lang.css, /src/layouts/Base.astro?astro&type=style&index=1&lang.css
+[2m09:31:06[22m [34m[watch][39m src/layouts/Base.astro
+[vite] program reload
+[2m09:31:49[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m09:31:49[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m09:32:32[22m [34m[200][39m / [2m99ms[22m
+[2m09:32:33[22m [34m[200][39m / [2m20ms[22m
+[2m09:32:34[22m [34m[200][39m / [2m19ms[22m
+[2m09:33:05[22m [34m[200][39m / [2m18ms[22m
+[2m09:33:07[22m [34m[200][39m / [2m21ms[22m
+[2m09:34:33[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m09:34:33[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m09:35:42[22m [34m[200][39m / [2m34ms[22m
+[2m09:35:42[22m [34m[200][39m / [2m78ms[22m
+[2m09:35:44[22m [34m[200][39m / [2m19ms[22m
+[2m09:35:45[22m [34m[200][39m / [2m17ms[22m
+[2m09:36:49[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m09:36:49[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m09:37:16[22m [34m[200][39m / [2m32ms[22m
+[2m09:37:17[22m [34m[200][39m / [2m20ms[22m
+[2m09:37:18[22m [34m[200][39m / [2m24ms[22m
+[2m09:37:41[22m [34m[200][39m / [2m18ms[22m
+[2m09:38:49[22m [34m[200][39m / [2m20ms[22m
+[2m09:43:35[22m [34m[200][39m / [2m18ms[22m
+[2m09:45:38[22m [34m[200][39m / [2m17ms[22m
+[2m09:45:51[22m [34m[200][39m / [2m31ms[22m
+[2m09:47:54[22m [34m[200][39m / [2m19ms[22m
+[2m09:51:48[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m09:51:48[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m09:51:57[22m [34m[200][39m / [2m34ms[22m
+[2m09:52:37[22m [34m[200][39m / [2m16ms[22m
+[2m09:53:30[22m [34m[200][39m / [2m20ms[22m
+[2m09:53:32[22m [34m[200][39m / [2m17ms[22m
+[2m09:53:33[22m [34m[200][39m / [2m21ms[22m
+[2m09:53:35[22m [34m[200][39m / [2m15ms[22m
+[2m09:54:45[22m [34m[200][39m / [2m18ms[22m
+[2m09:59:23[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m09:59:27[22m [34m[200][39m / [2m167ms[22m
+[2m09:59:27[22m [34m[200][39m / [2m15ms[22m
+[2m09:59:57[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m09:59:57[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m10:00:05[22m [34m[200][39m / [2m17ms[22m
+[2m10:00:25[22m [34m[200][39m / [2m18ms[22m
+[2m10:00:52[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m10:00:52[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m10:01:08[22m [34m[200][39m / [2m18ms[22m
+[2m10:03:56[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m10:03:56[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m10:04:05[22m [34m[200][39m / [2m42ms[22m
+[2m10:04:26[22m [34m[200][39m / [2m19ms[22m
+[2m10:05:21[22m [34m[200][39m / [2m18ms[22m
+[2m10:06:15[22m [34m[200][39m / [2m16ms[22m
+[2m10:07:16[22m [34m[200][39m / [2m18ms[22m
+[2m10:11:00[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m10:11:00[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m10:11:40[22m [34m[200][39m / [2m49ms[22m
+[2m10:12:58[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m10:12:58[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m10:13:39[22m [34m[200][39m / [2m18ms[22m
+[2m10:13:44[22m [34m[200][39m / [2m15ms[22m
+[2m10:18:45[22m [34m[watch][39m src/layouts/Base.astro
+[2m10:18:47[22m [34m[200][39m / [2m68ms[22m
+[2m10:18:47[22m [34m[200][39m / [2m18ms[22m
+[2m10:18:56[22m [34m[watch][39m src/layouts/Base.astro
+[2m10:19:14[22m [34m[watch][39m src/layouts/Base.astro
+[2m10:19:17[22m [34m[200][39m / [2m64ms[22m
+[2m10:19:17[22m [34m[200][39m / [2m17ms[22m
+[2m10:19:25[22m [34m[watch][39m /src/layouts/Base.astro?astro&type=style&index=0&lang.css, /src/layouts/Base.astro?astro&type=style&index=1&lang.css
+[2m10:19:25[22m [34m[watch][39m src/layouts/Base.astro
+[vite] program reload
+[2m10:19:47[22m [34m[watch][39m /src/layouts/Base.astro?astro&type=style&index=0&lang.css, /src/layouts/Base.astro?astro&type=style&index=1&lang.css
+[2m10:19:47[22m [34m[watch][39m src/layouts/Base.astro
+[vite] program reload
+[2m10:20:13[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m10:20:13[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m10:20:24[22m [34m[200][39m / [2m164ms[22m
+[2m10:20:44[22m [34m[200][39m / [2m17ms[22m
+[2m10:21:50[22m [34m[200][39m / [2m21ms[22m
+[2m10:23:36[22m [34m[200][39m / [2m25ms[22m
+[2m10:27:30[22m [34m[200][39m / [2m32ms[22m
+[2m10:30:28[22m [34m[200][39m / [2m18ms[22m
+[2m10:31:49[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m10:31:49[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m10:32:22[22m [34m[200][39m / [2m23ms[22m
+[2m10:33:05[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m10:33:05[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m10:33:31[22m [34m[200][39m / [2m16ms[22m
+[2m10:36:28[22m [34m[watch][39m src/layouts/Base.astro
+[2m10:36:30[22m [34m[200][39m / [2m79ms[22m
+[2m10:36:41[22m [34m[watch][39m /src/layouts/Base.astro?astro&type=style&index=0&lang.css, /src/layouts/Base.astro?astro&type=style&index=1&lang.css
+[2m10:36:41[22m [34m[watch][39m src/layouts/Base.astro
+[vite] program reload
+[2m10:36:58[22m [34m[200][39m / [2m173ms[22m
+[2m10:37:58[22m [34m[200][39m / [2m18ms[22m
+[2m10:39:12[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m10:39:12[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m10:39:28[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m10:39:28[22m [34m[watch][39m /src/pages/index.astro?astro&type=style&index=0&lang.css
+[2m10:40:15[22m [34m[200][39m / [2m20ms[22m
+[2m10:41:02[22m [34m[200][39m / [2m17ms[22m
+[2m10:42:50[22m [34m[watch][39m src/layouts/Base.astro
+[2m10:42:53[22m [34m[200][39m / [2m103ms[22m
+[2m10:42:53[22m [34m[200][39m / [2m106ms[22m
+[2m10:43:00[22m [34m[watch][39m /src/layouts/Base.astro?astro&type=style&index=0&lang.css, /src/layouts/Base.astro?astro&type=style&index=1&lang.css
+[2m10:43:00[22m [34m[watch][39m src/layouts/Base.astro
+[vite] program reload
+[2m10:43:12[22m [34m[200][39m / [2m87ms[22m
+[2m10:43:15[22m [34m[200][39m / [2m16ms[22m
+[2m10:46:40[22m [34m[200][39m / [2m25ms[22m
+[2m10:48:36[22m [34m[200][39m / [2m21ms[22m
+[2m10:51:03[22m [34m[200][39m / [2m18ms[22m
+[2m10:52:57[22m [33m[302][39m /_emdash/admin [2m75ms[22m
+[2m10:52:57[22m [34m[200][39m /_emdash/admin/setup [2m443ms[22m
+[2m10:53:44[22m [34m[vite][39m [32m✨ new dependencies optimized: [33m@cloudflare/kumo, @lingui/core, @lingui/react, @tanstack/react-query, @tanstack/react-router, clsx, tailwind-merge, @lingui/react/macro, @phosphor-icons/react, @cloudflare/kumo/primitives, @lingui/core/macro, @cloudflare/kumo/components/chart, echarts/charts, echarts/components, echarts/core, echarts/renderers, @dnd-kit/core, @dnd-kit/sortable, @dnd-kit/utilities, dompurify, marked, react-hotkeys-hook, @floating-ui/react, @tiptap/core, @tiptap/extension-character-count, @tiptap/extension-focus, @tiptap/extension-placeholder, @tiptap/extension-text-align, @tiptap/extension-typography, @tiptap/react, @tiptap/react/menus, @tiptap/starter-kit, @tiptap/suggestion, @tiptap/extension-drag-handle-react, @tiptap/extension-link[32m[39m
+[2m10:53:44[22m [34m[vite][39m [32m✨ optimized dependencies changed. reloading[39m
+[2m10:53:45[22m [34m[200][39m /_emdash/admin/setup [2m17ms[22m
+[2m10:53:46[22m [34m[200][39m / [2m557ms[22m
+[2m10:53:46[22m [34m[200][39m / [2m32ms[22m
+[2m10:55:31[22m [34m[200][39m / [2m84ms[22m
+[2m10:56:35[22m [33m[404][39m /admin [2m470ms[22m
+[2m10:56:46[22m [34m[200][39m /_emdash/admin/setup [2m21ms[22m
+[2m11:21:35[22m [33m[302][39m /_emdash/admin/login [2m6ms[22m
+[2m11:21:35[22m [34m[200][39m /_emdash/admin/setup [2m32ms[22m
+[2m11:23:24[22m [33m[404][39m /admin [2m165ms[22m
+[2m11:23:26[22m [34m[200][39m / [2m359ms[22m
+[2m11:23:39[22m [34m[200][39m / [2m18ms[22m
+[2m11:23:51[22m [33m[302][39m /_emdash/admin [2m1ms[22m
+[2m11:23:51[22m [34m[200][39m /_emdash/admin/setup [2m20ms[22m
+[2m11:24:13[22m [33m[302][39m /_emdash/admin [2m1ms[22m
+[2m11:24:13[22m [34m[200][39m /_emdash/admin/setup [2m7ms[22m
+[2m11:24:21[22m [33m[401][39m /_emdash/api/manifest [2m58ms[22m
+[2m11:24:42[22m [34m[200][39m /_emdash/admin/setup [2m8ms[22m
+[2m11:24:53[22m [34m[200][39m /_emdash/admin/setup [2m11ms[22m
+[2m11:29:27[22m [34m[200][39m /_emdash/api/setup/status [2m2606ms[22m
+[2m11:30:01[22m [34m[200][39m / [2m1060ms[22m
+[2m11:36:13[22m [34m[200][39m /_emdash/admin/setup [2m16ms[22m
+[2m11:36:15[22m [34m[200][39m / [2m328ms[22m
+[2m11:38:43[22m [33m[302][39m /_emdash/admin [2m8ms[22m
+[2m11:38:50[22m [33m[302][39m /_emdash/admin [2m0ms[22m
+[2m11:38:50[22m [34m[200][39m /_emdash/admin/setup [2m57ms[22m
+[2m11:38:56[22m [33m[302][39m /_emdash/admin [2m1ms[22m
+[2m11:38:56[22m [34m[200][39m /_emdash/admin/setup [2m43ms[22m
+[2m11:39:37[22m Configuration file updated. Restarting...
+[2m11:39:44[22m [34m[@astrojs/node][39m Enabling sessions with filesystem storage
+
+
+  [1m[36m— E M D A S H —[39m[22m
+   
+
+  [2m›[22m Admin UI    [36m/_emdash/admin[39m
+  [2m›[22m API         [36m/_emdash/api/*[39m
+
+[vite] connected.
+[2m11:40:36[22m [34m[types][39m Generated [2m3.29s[22m
+[2m11:40:36[22m [34m[vite][39m Re-optimizing dependencies because vite config has changed
+[2m11:40:37[22m [34m[vite][39m Port 4321 is in use, trying another one...
+[33m[1m11:40:38[22m [WARN] [emdash][39m Typegen failed: 500 <title>TypeError</title><script type="module" src="/@vite/client"></script>
+[2m11:46:38[22m Configuration file updated. Restarting...
+[2m11:46:39[22m Configuration file updated. Restarting...
+[2m11:46:39[22m [34m[@astrojs/node][39m Enabling sessions with filesystem storage
+
+
+  [1m[36m— E M D A S H —[39m[22m
+   
+
+  [2m›[22m Admin UI    [36m/_emdash/admin[39m
+  [2m›[22m API         [36m/_emdash/api/*[39m
+
+[vite] connected.
+[2m11:46:52[22m [34m[vite][39m Re-optimizing dependencies because vite config has changed
+[2m11:46:54[22m [34m[types][39m Generated [2m1.70s[22m
+[2m11:46:54[22m [34m[vite][39m Port 4321 is in use, trying another one...
+[33m[1m11:46:54[22m [WARN] [emdash][39m Typegen failed: 500 <title>TypeError</title><script type="module" src="/@vite/client"></script>
+ ELIFECYCLE  Command failed with exit code 4294967295.

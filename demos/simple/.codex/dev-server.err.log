@@ -1,0 +1,19 @@
+[hooks] Plugin "audit-log" declares content:beforeSave hook without content:write capability — skipping
+[hooks] Plugin "audit-log" declares media:afterUpload hook without media:read capability — skipping
+[31m[1m11:40:38[22m [ERROR][39m Cannot read properties of undefined (reading 'call')
+  [1mStack trace:[22m
+[2m    at F:/PROJECTS/CAMERON-STARATED-PORJECTS-17-10-2019/emDash-websites/Common Wealth/packages/core/src/astro/routes/api/typegen.ts
+    [...] See full stack trace in the browser, or rerun with --verbose.[22m
+[1m[31m[astro][39m[22m Unable to load your Astro config
+
+[31m[1m11:46:39[22m [ERROR] [config][39m encodeIslandPaths is not defined
+  [1mStack trace:[22m
+[2m    at eval at runInlinedModule (file:///F:/PROJECTS/CAMERON-STARATED-PORJECTS-17-10-2019/emDash-websites/Common%20Wealth/node_modules/.pnpm/vite@7.3.1_@types+node@24.1_8744dd12bf8e7cafc76344439dc9d317/node_modules/vite/dist/node/module-runner.js:913:9
+    [...] See full stack trace in the browser, or rerun with --verbose.[22m
+
+[31m[1m11:46:39[22m [ERROR][39m Continuing with previous valid configuration
+
+[31m[1m11:46:54[22m [ERROR][39m Cannot read properties of undefined (reading 'call')
+  [1mStack trace:[22m
+[2m    at F:/PROJECTS/CAMERON-STARATED-PORJECTS-17-10-2019/emDash-websites/Common Wealth/packages/core/src/astro/routes/api/typegen.ts
+    [...] See full stack trace in the browser, or rerun with --verbose.[22m
