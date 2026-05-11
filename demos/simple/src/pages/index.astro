@@ -29,8 +29,11 @@ const [
 
 Astro.cache.set(cacheHint);
 
-const { siteTitle } = resolveBlogSiteIdentity(settingsData);
+const { siteTitle, siteLogo } = resolveBlogSiteIdentity(settingsData);
 const cfg = configs[0]?.data ?? {};
+const fallbackLogo = "/uploads/0d3a8fc547761a9015ed3bc9284e6d76d16f8417.png";
+const logoSrc = siteLogo?.url ?? fallbackLogo;
+const logoAlt = siteLogo?.alt || siteTitle;
 
 const phone = cfg.phone ?? "(844) 442-4222";
 const bookUrl = cfg.book_url ?? "#book";
