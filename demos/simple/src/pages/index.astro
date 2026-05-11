@@ -1107,7 +1107,7 @@ function stars(rating: string | undefined) {
 
 .location-details {
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: minmax(220px, 1fr) 1fr;
 	gap: 1.5rem 2.5rem;
 }
 
@@ -1790,7 +1790,7 @@ details[open] .accordion-icon { transform: rotate(90deg); }
 	bottom: 36px;
 	height: 75px;
 	background: url("/uploads/Commonwealth%20audiowaves%20extended%201.png?v=wide") center / 100% 100% no-repeat;
-	opacity: 0.38;
+	opacity: 1;
 }
 
 .hero-wave svg {
@@ -2001,11 +2001,7 @@ details[open] .accordion-icon { transform: rotate(90deg); }
 }
 
 .location-logo {
-	font-size: 0;
-	width: 230px;
-	height: 44px;
 	margin-bottom: 1rem;
-	background: url("/uploads/0d3a8fc547761a9015ed3bc9284e6d76d16f8417.png") left center / contain no-repeat;
 }
 
 .location-row,
@@ -3265,10 +3261,7 @@ details[open] .accordion-icon { transform: rotate(90deg); }
 }
 
 .location-logo {
-	width: 405px !important;
-	height: 78px !important;
-	margin: 0 auto 2.45rem !important;
-	background-position: center center !important;
+	margin: 0 0 2.45rem !important;
 }
 
 .location-details {
@@ -3358,6 +3351,7 @@ details[open] .accordion-icon { transform: rotate(90deg); }
 
 .location-hours-heading h3 {
 	margin: 0 !important;
+	color: #202020 !important;
 }
 
 .location-hours-body {
