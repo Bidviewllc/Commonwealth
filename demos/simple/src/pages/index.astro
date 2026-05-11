@@ -118,10 +118,10 @@ const fallbackImages = {
 	loss: "/uploads/987f9e696c6744d636bb6afb18b12cf000eaa426.jpg",
 	wax: "/uploads/eed506fc51205e55275e3792962852d28e218d9a.jpg",
 	tinnitus: "/uploads/f34a0d4f4c8eea750dd899ef83306ee874cbceb5.jpg",
-	selection: "/uploads/7e491b0270c66c04b6e9bd78b76aebed8615d702.jpg",
-	fittings: "/uploads/c5d6626f5b19bb97e3522f21625df737776b0d76.jpg",
-	cleaning: "/uploads/c75196d8739f235e66717a51d4bff990f34be111.jpg",
-	batteries: "/uploads/676765b59a5714fb6044d267fb3889073a1e9187.jpg",
+	selection: "/uploads/card1.jpg",
+	fittings: "/uploads/card2.png",
+	cleaning: "/uploads/card3.png",
+	batteries: "/uploads/card4.png",
 	aaa: "/uploads/87ed96a25b1f78845e8de29258ec248d20a201d0.png",
 	ada: "/uploads/80f5515bb2d76e90726fdf8cc3a42a785aeb0d9f.png",
 	kentucky: "/uploads/b88d47dcf30a2d5545983ee6f70d9f4cfce0ebac.png",
@@ -863,7 +863,7 @@ function stars(rating: string | undefined) {
 	width: 100%;
 	max-width: 1440px;
 	margin: 0 auto;
-	padding: 5rem 2rem 6rem;
+	padding: 0 5rem 7.8rem;
 }
 
 .hero-heading {
@@ -895,6 +895,7 @@ function stars(rating: string | undefined) {
 	right: 0;
 	height: 60px;
 	z-index: 1;
+	opacity: 1;
 }
 
 .hero-wave svg {
@@ -995,7 +996,7 @@ function stars(rating: string | undefined) {
 
 /* ─── Team ──────────────────────────────────────────────────────────── */
 .team-section {
-	padding: 5rem 0;
+	padding: 1rem 0 3.6rem !important;
 	background: #f8fbfd;
 }
 
@@ -1184,7 +1185,7 @@ function stars(rating: string | undefined) {
 
 /* ─── Services ──────────────────────────────────────────────────────── */
 .services-section {
-	padding: 5rem 0;
+	padding: 1rem 0 4.65rem !important;
 	background: #f8fbfd;
 }
 
@@ -1250,7 +1251,7 @@ function stars(rating: string | undefined) {
 
 /* ─── Hearing Aids ──────────────────────────────────────────────────── */
 .hearing-aids-section {
-	padding: 5rem 0;
+	padding: 2rem 0 6.2rem !important;
 	background: #fff;
 }
 
@@ -1306,7 +1307,7 @@ function stars(rating: string | undefined) {
 
 /* ─── Brands ────────────────────────────────────────────────────────── */
 .brands-section {
-	padding: 3rem 0;
+	padding: 1rem 0 4.8rem !important;
 	background: #f8fbfd;
 	border-top: 1px solid #eee;
 	border-bottom: 1px solid #eee;
@@ -1356,7 +1357,7 @@ function stars(rating: string | undefined) {
 
 /* ─── Hearing Protection Accordion ─────────────────────────────────── */
 .protection-section {
-	padding: 5rem 0;
+	padding: 1rem 0 4.6rem !important;
 	background: #fff;
 }
 
@@ -1556,9 +1557,10 @@ details[open] .accordion-icon { transform: rotate(90deg); }
 }
 
 .news-header h2 {
-	font-size: clamp(1.5rem, 3vw, 2rem);
+	font-size: 40px;
 	font-weight: 700;
-	color: var(--brand) !important;
+	color: #222D33 !important;
+	white-space: nowrap;
 }
 
 .news-grid {
@@ -1610,7 +1612,7 @@ details[open] .accordion-icon { transform: rotate(90deg); }
 .news-title {
 	font-size: 1rem;
 	font-weight: 700;
-	color: #1a1a1a;
+	color: #222D33;
 	margin-bottom: 0.5rem;
 	line-height: 1.35;
 }
@@ -1639,7 +1641,7 @@ details[open] .accordion-icon { transform: rotate(90deg); }
 	.team-grid { grid-template-columns: 1fr; gap: 2rem; }
 	.location-card { grid-template-columns: 1fr; }
 	.location-map { min-height: 280px; }
-	.ha-grid { grid-template-columns: 1fr; }
+	.ha-grid { grid-template-columns: repeat(2, 1fr); }
 	.news-grid { grid-template-columns: repeat(2, 1fr); }
 	.testimonials-grid { grid-template-columns: repeat(2, 1fr); }
 }
@@ -1648,12 +1650,15 @@ details[open] .accordion-icon { transform: rotate(90deg); }
 	.hero { min-height: 420px; }
 	.hero-content { padding: 4rem 1.5rem 5rem; }
 	.cards-grid { grid-template-columns: 1fr; }
+	.ha-grid { grid-template-columns: 1fr; }
 	.ha-card { grid-template-columns: 1fr; }
 	.ha-img-wrap { width: 100%; height: 180px; }
 	.news-grid { grid-template-columns: 1fr; }
 	.testimonials-grid { grid-template-columns: 1fr; }
 	.trust-badges { gap: 1.5rem; }
 	.team-cards { grid-template-columns: 1fr 1fr; }
+	.faq-section { margin-top: 48px; }
+	.team-section { padding-top: 0px !important; }
 }
 
 /* Screenshot-matched Commonwealth homepage */
@@ -1875,7 +1880,7 @@ details[open] .accordion-icon { transform: rotate(90deg); }
 .team-intro {
 	position: relative;
 	min-height: 300px;
-	padding-top: 55px;
+	padding: 7.6rem 0 0 6.8rem !important;
 }
 
 .team-intro::after {
@@ -2784,7 +2789,7 @@ details[open] .accordion-icon { transform: rotate(90deg); }
 
 /* Wide about section matching the supplied 1440px reference */
 .about-section {
-	padding: 4.2rem 0 4.8rem !important;
+	padding: 1rem 0 4.8rem !important;
 	background: #fff;
 }
 
@@ -2972,7 +2977,7 @@ details[open] .accordion-icon { transform: rotate(90deg); }
 
 @media (max-width: 900px) {
 	.about-section .container {
-		padding: 0 18px !important;
+		padding: 0 20px !important;
 	}
 
 	.about-grid {
@@ -3769,8 +3774,19 @@ details[open] .accordion-icon { transform: rotate(90deg); }
 
 @media (max-width: 900px) {
 	.hearing-aids-section .ha-grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+		max-width: none !important;
+		gap: 1.5rem !important;
+	}
+
+	.hearing-aids-section .ha-card {
 		grid-template-columns: 1fr !important;
-		max-width: 650px !important;
+	}
+
+	.hearing-aids-section .ha-img-wrap,
+	.hearing-aids-section .ha-img-placeholder {
+		width: 100% !important;
+		height: 200px !important;
 	}
 }
 
@@ -4015,7 +4031,7 @@ details[open] .accordion-icon { transform: rotate(90deg); }
 	margin: 0 0 3rem !important;
 	color: #fff !important;
 	font-family: "Merriweather", Georgia, "Times New Roman", serif;
-	font-size: 2.15rem !important;
+	font-size: 2.75rem !important;
 	font-weight: 700;
 	line-height: 1.1;
 	text-align: center;
@@ -4086,7 +4102,7 @@ details[open] .accordion-icon { transform: rotate(90deg); }
 	margin: 0 0 0.65rem !important;
 	color: #0076ba !important;
 	font-family: "Merriweather", Georgia, "Times New Roman", serif;
-	font-size: 2.35rem !important;
+	font-size: 2.75rem !important;
 	font-weight: 700;
 	line-height: 1.1;
 	text-align: center;
@@ -4182,7 +4198,7 @@ details[open] .accordion-icon { transform: rotate(90deg); }
 
 .news-header h2 {
 	margin: 0 0 0.85rem !important;
-	color: #253238 !important;
+	color: #0076ba !important;
 	font-family: "Merriweather", Georgia, "Times New Roman", serif;
 	font-size: 2.25rem !important;
 	font-weight: 700;
@@ -4335,9 +4351,9 @@ details[open] .accordion-icon { transform: rotate(90deg); }
 	.brands-section .container,
 	.testimonials-section,
 	.news-section .container {
-		width: calc(100% - 24px) !important;
-		padding-left: 1.2rem !important;
-		padding-right: 1.2rem !important;
+		width: calc(100% - 40px) !important;
+		padding-left: 20px !important;
+		padding-right: 20px !important;
 	}
 
 	.protection-section .section-header h2,
@@ -4359,7 +4375,7 @@ details[open] .accordion-icon { transform: rotate(90deg); }
 	}
 
 	.hero {
-		width: calc(100% - 24px) !important;
+		width: calc(100% - 40px) !important;
 		min-height: min(520px, calc(100vh - 110px)) !important;
 		margin: 12px auto 0 !important;
 		border-radius: 14px !important;
@@ -4371,7 +4387,7 @@ details[open] .accordion-icon { transform: rotate(90deg); }
 
 	.hero-heading {
 		max-width: 100% !important;
-		font-size: clamp(2rem, 8.8vw, 3rem) !important;
+		font-size: clamp(1.6rem, 7.04vw, 2.4rem) !important;
 		line-height: 1.16 !important;
 	}
 
@@ -4417,12 +4433,17 @@ details[open] .accordion-icon { transform: rotate(90deg); }
 	.about-section .container,
 	.team-section .container,
 	.location-section .container,
+	.services-section .container,
 	.hearing-aids-section .container,
+	.brands-section .container,
 	.protection-section .container,
-	.faq-section .container {
+	.testimonials-section,
+	.faq-section .container,
+	.news-section .container,
+	.trust-section .container {
 		max-width: 100% !important;
-		padding-left: 1.1rem !important;
-		padding-right: 1.1rem !important;
+		padding-left: 20px !important;
+		padding-right: 20px !important;
 	}
 
 	.about-grid,
@@ -4436,7 +4457,8 @@ details[open] .accordion-icon { transform: rotate(90deg); }
 	.services-section .section-header h2,
 	.hearing-aids-section .section-header h2,
 	.protection-section .section-header h2,
-	.faq-heading {
+	.faq-heading,
+	.testimonials-heading {
 		font-size: clamp(2rem, 8vw, 2.6rem) !important;
 		white-space: normal !important;
 	}
@@ -4459,7 +4481,7 @@ details[open] .accordion-icon { transform: rotate(90deg); }
 
 	.team-cards {
 		display: grid !important;
-		grid-template-columns: 1fr !important;
+		grid-template-columns: repeat(3, 1fr) !important;
 		gap: 1rem !important;
 		height: auto !important;
 		padding: 0 1.1rem !important;
@@ -4469,9 +4491,9 @@ details[open] .accordion-icon { transform: rotate(90deg); }
 		position: relative !important;
 		left: auto !important;
 		top: auto !important;
-		width: min(320px, 100%) !important;
-		height: 320px !important;
-		margin: 0 auto !important;
+		width: 100% !important;
+		height: 280px !important;
+		margin: 0 !important;
 		transform: none !important;
 	}
 
@@ -4514,8 +4536,18 @@ details[open] .accordion-icon { transform: rotate(90deg); }
 	}
 
 	.hearing-aids-section .ha-grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+		gap: 1.5rem !important;
+	}
+
+	.hearing-aids-section .ha-card {
 		grid-template-columns: 1fr !important;
-		gap: 2rem !important;
+	}
+
+	.hearing-aids-section .ha-img-wrap,
+	.hearing-aids-section .ha-img-placeholder {
+		width: 100% !important;
+		height: 200px !important;
 	}
 
 	.brands-row {
@@ -4541,7 +4573,7 @@ details[open] .accordion-icon { transform: rotate(90deg); }
 	}
 
 	.hero-heading {
-		font-size: clamp(1.9rem, 10vw, 2.35rem) !important;
+		font-size: clamp(1.52rem, 8vw, 1.88rem) !important;
 	}
 
 	.hero .btn-primary,
@@ -4558,11 +4590,17 @@ details[open] .accordion-icon { transform: rotate(90deg); }
 	}
 
 	.team-intro {
-		min-height: 620px !important;
+		min-height: 0 !important;
+	}
+
+	.team-cards {
+		grid-template-columns: 1fr !important;
 	}
 
 	.team-card[data-team-featured] {
-		height: 300px !important;
+		width: min(320px, 100%) !important;
+		height: 400px !important;
+		margin: 0 auto !important;
 	}
 
 	.services-section .service-card {
@@ -4618,7 +4656,7 @@ details[open] .accordion-icon { transform: rotate(90deg); }
 
 	.team-intro {
 		min-height: 0 !important;
-		padding: 0 1.1rem !important;
+		padding: 0 !important;
 	}
 
 	.team-intro::after {
@@ -4631,6 +4669,7 @@ details[open] .accordion-icon { transform: rotate(90deg); }
 
 	.team-cards {
 		margin-top: 0.75rem !important;
+		justify-content: flex-start !important;
 	}
 
 	.brands-section {
@@ -4824,17 +4863,19 @@ details[open] .accordion-icon { transform: rotate(90deg); }
 	.team-cards {
 		order: -1;
 		margin: 0 0 0.65rem !important;
-		padding: 0 1.1rem !important;
+		padding: 0 !important;
 	}
 
 	.team-intro {
 		order: 1;
+		min-height: 0 !important;
+		padding: 0 !important;
 	}
 
 	.team-card[data-team-featured] {
 		width: 100% !important;
 		max-width: none !important;
-		height: 345px !important;
+		height: 450px !important;
 	}
 
 	.about-heading,
@@ -4974,11 +5015,6 @@ details[open] .accordion-icon { transform: rotate(90deg); }
 		width: calc(100% - 36px) !important;
 	}
 
-	.testimonials-heading,
-	.faq-heading {
-		font-size: 1.1rem !important;
-		line-height: 1.15 !important;
-	}
 
 	.news-header h2 {
 		font-size: 1.1rem !important;

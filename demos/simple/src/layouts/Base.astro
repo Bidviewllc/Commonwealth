@@ -82,6 +82,7 @@ const isLoggedIn = !!Astro.locals.user;
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" href="/uploads/commonwealth-audiology-favicon.png" type="image/png" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
 		<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Merriweather:wght@700;900&display=swap" rel="stylesheet" />
@@ -1005,7 +1006,9 @@ const isLoggedIn = !!Astro.locals.user;
 					display: none;
 				}
 				.footer-grid { grid-template-columns: 1fr; }
-				.footer-brand { grid-column: span 1; max-width: none; }
+				.footer-brand { grid-column: span 1; max-width: none; text-align: left; }
+				.footer-logo-img { width: min(100%, 328px); margin: 0; }
+				.footer-socials { justify-content: flex-start; }
 				.footer-inner { padding-inline: 1.25rem; }
 				.footer-heading { font-size: 1.5rem; }
 				.footer-wave {
