@@ -344,7 +344,9 @@ function stars(rating: string | undefined) {
 		<div class="container">
 			<div class="location-card">
 				<div class="location-info">
-					<div class="location-logo">{siteTitle}</div>
+					<div class="location-logo">
+						<img src={logoSrc} alt={logoAlt} class="location-logo-img" />
+					</div>
 					<div class="location-details">
 						<div class="location-row">
 							<img src="/uploads/googlemap.svg" alt="" class="location-icon" aria-hidden="true" />
@@ -380,7 +382,7 @@ function stars(rating: string | undefined) {
 							<img src="/uploads/phone.svg" alt="" class="location-icon" aria-hidden="true" />
 							<div>
 								<h3>PHONE NUMBER</h3>
-								<p><strong>Text or call:</strong></p>
+								<p><strong>Text or call:</strong> {phone}</p>
 							</div>
 						</div>
 					</div>
@@ -1085,15 +1087,17 @@ function stars(rating: string | undefined) {
 
 .location-info {
 	padding: 2.5rem;
-	background: #fff;
+	background: #f2f5f7;
 }
 
 .location-logo {
-	font-size: 1.1rem;
-	font-weight: 700;
-	color: var(--brand);
 	margin-bottom: 1.5rem;
-	letter-spacing: -0.02em;
+}
+
+.location-logo-img {
+	height: 64px;
+	width: auto;
+	display: block;
 }
 
 .location-details {
@@ -1559,7 +1563,7 @@ details[open] .accordion-icon { transform: rotate(90deg); }
 .news-header h2 {
 	font-size: 40px;
 	font-weight: 700;
-	color: #222D33 !important;
+	color: #222d33 !important;
 	white-space: nowrap;
 }
 
@@ -1612,7 +1616,7 @@ details[open] .accordion-icon { transform: rotate(90deg); }
 .news-title {
 	font-size: 1rem;
 	font-weight: 700;
-	color: #222D33;
+	color: #222d33 !important;
 	margin-bottom: 0.5rem;
 	line-height: 1.35;
 }
@@ -3529,8 +3533,8 @@ details[open] .accordion-icon { transform: rotate(90deg); }
 }
 
 .services-section .card-img-wrap {
-	height: 205px !important;
-	flex: 0 0 205px;
+	height: 250px !important;
+	flex: 0 0 250px;
 	overflow: hidden;
 }
 
