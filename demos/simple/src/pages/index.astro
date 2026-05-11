@@ -351,18 +351,28 @@ function stars(rating: string | undefined) {
 						<img src={logoSrc} alt={logoAlt} class="location-logo-img" />
 					</div>
 					<div class="location-details">
-						<div class="location-row">
-							<img src="/uploads/googlemap.svg" alt="" class="location-icon" aria-hidden="true" />
-							<div>
-								<h3>ADDRESS</h3>
-								<p>
-									{cfg.address_line1 ?? "204 Bevins Lane, Suite B"}
-									{cfg.address_line2 && <><br />{cfg.address_line2}</>}
-									<br />{cfg.city_state ?? "Georgetown, KY 40324"}
-								</p>
+						<div class="location-left-col">
+							<div class="location-row">
+								<img src="/uploads/googlemap.svg" alt="" class="location-icon" aria-hidden="true" />
+								<div>
+									<h3>ADDRESS</h3>
+									<p>
+										{cfg.address_line1 ?? "204 Bevins Lane, Suite B"}
+										{cfg.address_line2 && <><br />{cfg.address_line2}</>}
+										<br />{cfg.city_state ?? "Georgetown, KY 40324"}
+									</p>
+								</div>
 							</div>
+							<div class="location-row">
+								<img src="/uploads/phone.svg" alt="" class="location-icon" aria-hidden="true" />
+								<div>
+									<h3>PHONE NUMBER</h3>
+									<p><strong>Text or call:</strong> {phone}</p>
+								</div>
+							</div>
+							<a href="https://maps.google.com" target="_blank" rel="noopener" class="btn-outline-dark">GET DIRECTIONS <span class="button-arrow" aria-hidden="true"></span></a>
 						</div>
-						<div class="location-hours">
+						<div class="location-right-col">
 							<div class="location-hours-heading">
 								<img src="/uploads/clock.svg" alt="" class="location-icon" aria-hidden="true" />
 								<h3>HOURS</h3>
@@ -370,26 +380,18 @@ function stars(rating: string | undefined) {
 							<div class="location-hours-body">
 								<table class="hours-table">
 									<tr><td>Monday:</td><td>9:00am&nbsp; - &nbsp;5:00 pm</td></tr>
-									<tr><td>Tuesday:</td><td>9:00am&nbsp; - &nbsp;7:00 pm</td></tr>
+									<tr><td>Tuesday:</td><td>9:00am&nbsp; - &nbsp;7:00 pm*</td></tr>
 									<tr><td>Wednesday:</td><td>9:00am&nbsp; - &nbsp;5:00 pm</td></tr>
 									<tr><td>Thursday:</td><td>9:00am&nbsp; - &nbsp;5:00 pm</td></tr>
 									<tr><td>Friday:</td><td>9:00am&nbsp; - &nbsp;1:00 pm</td></tr>
 									<tr><td>Saturday:</td><td>Closed</td></tr>
 									<tr><td>Sunday:</td><td>Closed</td></tr>
 								</table>
-								<p class="location-note">Lunch Daily: 1 PM - 1:30 PM</p>
+								<p class="location-note">Lunch Daily: 1 PM – 1:30 PM</p>
 								<p class="location-note">* Evening Hours Available by Appointment Only</p>
 							</div>
 						</div>
-						<div class="location-row">
-							<img src="/uploads/phone.svg" alt="" class="location-icon" aria-hidden="true" />
-							<div>
-								<h3>PHONE NUMBER</h3>
-								<p><strong>Text or call:</strong> {phone}</p>
-							</div>
-						</div>
 					</div>
-					<a href="https://maps.google.com" target="_blank" rel="noopener" class="btn-outline-dark">GET DIRECTIONS <span class="button-arrow" aria-hidden="true"></span></a>
 				</div>
 				<div class="location-map">
 					{cfg.map_embed_url
@@ -1094,20 +1096,37 @@ function stars(rating: string | undefined) {
 }
 
 .location-logo {
-	margin-bottom: 1.5rem;
+	margin-bottom: 1.75rem;
 }
 
 .location-logo-img {
-	height: 64px;
+	height: 72px;
 	width: auto;
 	display: block;
 }
 
 .location-details {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 1.5rem 2.5rem;
+}
+
+.location-left-col {
 	display: flex;
 	flex-direction: column;
 	gap: 1.25rem;
-	margin-bottom: 1.5rem;
+}
+
+.location-right-col {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+}
+
+.location-hours-heading {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
 }
 
 .location-row {
@@ -1119,25 +1138,7 @@ function stars(rating: string | undefined) {
 	line-height: 1.6;
 }
 
-.location-row svg {
-	flex-shrink: 0;
-	margin-top: 2px;
-	color: var(--brand);
-}
-
 .location-row p { margin: 0; }
-
-.location-hours {
-	display: flex;
-	gap: 0.75rem;
-	align-items: flex-start;
-}
-
-.location-hours svg {
-	flex-shrink: 0;
-	margin-top: 2px;
-	color: var(--brand);
-}
 
 .hours-table {
 	font-size: 0.85rem;
