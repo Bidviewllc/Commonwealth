@@ -1100,21 +1100,26 @@ function stars(rating: string | undefined) {
 }
 
 .location-logo-img {
-	height: 72px;
+	height: 80px;
 	width: auto;
 	display: block;
 }
 
 .location-details {
 	display: grid;
-	grid-template-columns: minmax(220px, 1fr) 1fr;
-	gap: 1.5rem 2.5rem;
+	grid-template-columns: minmax(300px, 1fr) 1fr;
+	gap: 1.5rem 3rem;
 }
 
 .location-left-col {
 	display: flex;
 	flex-direction: column;
-	gap: 1.25rem;
+	gap: 1.5rem;
+}
+
+.location-row p {
+	margin: 0;
+	white-space: nowrap;
 }
 
 .location-right-col {
@@ -1137,8 +1142,6 @@ function stars(rating: string | undefined) {
 	font-size: 0.9rem;
 	line-height: 1.6;
 }
-
-.location-row p { margin: 0; }
 
 .hours-table {
 	font-size: 0.85rem;
